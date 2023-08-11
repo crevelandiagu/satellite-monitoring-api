@@ -53,6 +53,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload --host 0.0.0.0 --port 5000
 ```
 
+Una vez arriba la aplicacion puede consultar la documentacion en 
+http://0.0.0.0:5000/docs
+
 
 ## Segunda parte
 

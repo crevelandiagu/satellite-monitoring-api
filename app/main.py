@@ -12,10 +12,10 @@ app = FastAPI()
 
 
 @app.get("/ping")
-async def root():
+async def ping():
     '''
     Helty  endpoint
-    :return:
+    :return: pong
     '''
     return "pong"
 
@@ -24,7 +24,7 @@ async def save_manul_img(imagery_erath: ImageryErath):
     '''
     Consult manualy a specific images and save in s3 bucket
     :param item:
-    :return:
+    :return: messege
     '''
     upload_file_msg = upload_file([dict(imagery_erath)])
     return imagery_erath
@@ -36,7 +36,7 @@ async def create_upload_file(background_tasks: BackgroundTasks, file: UploadFile
     Consult a list params in csv for save in bucket s3
     :param background_tasks:
     :param file:
-    :return:
+    :return: messege
     '''
     if file.size == 0:
         return "File empty"
@@ -48,10 +48,10 @@ async def create_upload_file(background_tasks: BackgroundTasks, file: UploadFile
 
 
 @app.get("/list-images")
-async def say_hello(name: str):
+async def list_rutes_images(name: str):
     '''
     get the s3 rute for each images
     :param name:
-    :return:
+    :return: [{BUCKET_NAME}/{field_id}/{date}_imagery.png]
     '''
     return {"message": []}
