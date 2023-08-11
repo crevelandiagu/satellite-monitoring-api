@@ -30,7 +30,9 @@ dejando posibilidad de guardar en una base de datos la ruta de s3 para mayor fac
 ### Docker
 1. Asegurarse de tener Docker y docker-compose instalado. Si actualmente no lo tiene instalado dirigirse
    a la pagina de docker para las intrucciones de instalación de su sistema operativo
-2. Ubicarse sobre este directorio y ejecutar docker
+2. Dentro del Dockerfile encontrara las variables de entorno que requiere para que funcione con normalidad la app
+como la key proporcionada por la app de la Nasa y las de AWS CLI con los permisos requeridos
+3. Ubicarse sobre este directorio y ejecutar docker
 
 ```shell
 docker build -t satelite-app .
@@ -41,7 +43,8 @@ docker run satelite-app
 1. Situarse en el servicio 
 2. Crear y activar entorno virtual env
 3. Instalar dependencias
-3. Subir servicio
+4. Declarar las variables de entorno del archivo *env_example*
+5. Subir servicio
 ```
 cd ./carpertadelservicio/
 python3 -m venv ./
